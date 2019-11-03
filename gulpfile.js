@@ -18,10 +18,11 @@ gulp.task('minifyCss', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('sourcesMaps', function() {
+gulp.task('sourcesMaps', function(done) {
   gulp.src('src/styles/**/*.css')
     .pipe(sourcemaps.init())
-    .pipe(concatCss('super.css'))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'));
+    done();
 });
