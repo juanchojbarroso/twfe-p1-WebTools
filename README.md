@@ -117,6 +117,24 @@ npm install gulp -D
 
 ![image](/img/09.png)
 
+## Generando un proyecto base (scaffold)
+
+Para comenzar vamos a general nuestro "scaffold" con el que seguiremos trabajando a lo largo de esta practica. Para esto nos vamos a apoyar en el generador **learnfe**.
+
+Ejetamos el comando:
+
+```bash
+yo learnfe
+```
+
+![image](/img/09.png)
+
+Tras ejecutarlo se van a crear algunos directorios y ficheros que usaremos luego.
+
+![image](/img/11.png)
+
+##
+
 ---
 
 ## Bibliografía
