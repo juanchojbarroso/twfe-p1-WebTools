@@ -224,11 +224,42 @@ Y tendremos como resultado en `dist > super.css`
 
 > NOTA: al final del fichero super.css podemos ver en la linea 103 a la 105 la prueba que la tarea ha funcionado exitosamente.
 
-### 2. Minificar css.
+### 2. Minificar css
 
-### 3. Hacer sourcesmaps del css.
+Para minificar (Minify) ficheros css tenemos que instalar un paquete llamado [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 
-### Lance BrowserSync.
+```bash
+npm install gulp-clean-css --save-dev
+```
+
+![image](/img/17.png)
+
+Lo siguiente sera añadir la tarea "**minifyCss**" a Gulp para automatizarlo.
+
+```javascript
+let cleanCSS = require('gulp-clean-css');
+
+gulp.task('minifyCss', () => {
+  return gulp
+    .src('src/styles/**/*.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(gulp.dest('dist'));
+});
+```
+
+Si todo va bien deberíamos tener dos ficheros minificados>
+
+![image](/img/20.png)
+
+En efecto mirando dentro de los ficheros generados están minificados.
+
+![image](/img/18.png)
+
+![image](/img/19.png)
+
+### 3. Sourcesmaps del css
+
+### 4. BrowserSync
 
 ### Investigar sobre paquetes para minificar imágenes y js. (Automatizarlo)
 
