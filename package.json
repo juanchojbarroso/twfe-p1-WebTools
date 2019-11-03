@@ -1,0 +1,22 @@
+{
+  "name": "twfe-p1-webtools",
+  "version": "1.0.0",
+  "description": "Por: Juan Barroso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanchojer/twfe-p1-WebTools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanchojer/twfe-p1-WebTools/issues"
+  },
+  "homepage": "https://github.com/juanchojer/twfe-p1-WebTools#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}

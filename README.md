@@ -133,9 +133,53 @@ Tras ejecutarlo se van a crear algunos directorios y ficheros que usaremos luego
 
 ![image](/img/11.png)
 
-##
+## Automatizando tareas con gulp
 
----
+### Gulp init
+
+Gulp es un paquete Node por lo que puede ser manejado a traves de `npm`. Para esto debemos iniciar nuestro proyecto con:
+
+```bash
+npm init
+```
+
+Para generar un fichero llamado `package.json` en el cual esta contenida toda la información de nuestro proyecto para node. Tal como este:
+
+```json
+{
+  "name": "twfe-p1-webtools",
+  "version": "1.0.0",
+  "description": "Por: Juan Barroso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanchojer/twfe-p1-WebTools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanchojer/twfe-p1-WebTools/issues"
+  },
+  "homepage": "https://github.com/juanchojer/twfe-p1-WebTools#readme"
+}
+```
+
+### Instalando gulp en nuestro proyecto
+
+Para instalar gulp en nuestro proyecto debemos usar el siguiente comando:
+
+```bash
+npm install --save-dev gulp
+```
+
+> NOTA: Gulp lo tenemos que instalar como una **devDependencies** porque de esta manera nos aseguramos que al generar la "aplicación" final estas dependencias no se instalaran en producción. Solo queremos que esten disponibles en tiempo de desarrollo.
+
+Después de la instalación de Gulp el árbol de nuestro proyecto se vera de esta manera:
+
+![image](/img/12.png)
 
 ## Bibliografía
 
