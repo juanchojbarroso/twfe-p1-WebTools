@@ -181,6 +181,59 @@ Después de la instalación de Gulp el árbol de nuestro proyecto se vera de est
 
 ![image](/img/12.png)
 
+### Añadiendo gulp file en nuestro proyecto
+
+Para configurar las tareas de gulp debemos crear un modulo/fichero llamado `gulpfile.js` en el que vamos a escribir las tareas/rutinas que queremos automatizar.
+
+### 1. Concatenar los dos ficheros css (gulp)
+
+Para concatenar dos ficheros css tenemos que instalar un paquete llamado [gulp-concat-css](https://www.npmjs.com/package/gulp-concat-css)
+
+```bash
+npm install --save-dev gulp-concat-css
+```
+
+Lo siguiente sera añadir la tarea "**concatCss**" a Gulp para automatizarlo.
+
+```javascript
+var concatCss = require('gulp-concat-css');
+
+gulp.task('concatCss', function() {
+  return gulp
+    .src('src/styles/**/*.css')
+    .pipe(concatCss('super.css'))
+    .pipe(gulp.dest('dist'));
+});
+```
+
+Para probar vamos a añadir `minor.css`
+
+![image](/img/14.png)
+
+y vamos a concatenar con `main.css`
+
+![image](/img/13.png)
+
+Ejecutamos el comando `$ gulp concatCss`:
+
+![image](/img/15.png)
+
+Y tendremos como resultado en `dist > super.css`
+
+![image](/img/16.png)
+
+> NOTA: al final del fichero super.css podemos ver en la linea 103 a la 105 la prueba que la tarea ha funcionado exitosamente.
+
+### 2. Minificar css.
+
+### 3. Hacer sourcesmaps del css.
+
+### Lance BrowserSync.
+
+### Investigar sobre paquetes para minificar imágenes y js. (Automatizarlo)
+
+### Investigar la creación de un proyecto Yeoman para Jekyl.
+
 ## Bibliografía
 
 - https://git-scm.com/book/es/v1/Empezando-Instalando-Git

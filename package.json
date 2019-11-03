@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/juanchojer/twfe-p1-WebTools#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-concat-css": "^3.1.0"
   }
 }
