@@ -299,9 +299,86 @@ Si todo va bien deberíamos tener dos ficheros con el sourcesMaps.
 
 ### 4. BrowserSync
 
-### Investigar sobre paquetes para minificar imágenes y js. (Automatizarlo)
+Para sincronizar los cambios en el código (html) con su representación en el Browser tenemos que instalar un paquete llamado [browser-sync](https://browsersync.io/docs/gulp)
 
-### Investigar la creación de un proyecto Yeoman para Jekyl.
+```bash
+npm install browser-sync --save-dev
+```
+
+![image](/img/26.png)
+
+Lo siguiente sera añadir la tarea "**browserSync**" a Gulp para automatizarlo.
+
+```javascript
+var browserSync = require('browser-sync').create();
+
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  });
+  gulp.watch('*.html', browserSync.reload);
+});
+```
+
+Si todo va bien deberíamos recibir feedback por consola que se esta mirando el fichero html indicado:
+
+![image](/img/25.png)
+
+Y si vemos en localhost:3000
+
+![image](/img/27.png)
+
+Para comprobar que en efecto estamos sincronizados insertaremos una linea:
+
+```html
+<h2>Hello Wold!</h2>
+```
+
+Una vez que guardemos los cambios en la consola nos dirá que esta actualizando el navegador:
+
+![image](/img/29.png)
+
+En efecto los cambios fueron aplicados son tener que recargar la pagina para ver los cambios.
+
+![image](/img/28.png)
+
+## Apéndice
+
+### Investigar sobre paquetes para minificar imágenes y js
+
+#### Minificar Imagenes
+
+Para minificar imagenes se puede lograr con:
+
+[gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
+
+![image](/img/30.png)
+
+#### Minificar ficheros js
+
+Para minificar ficheros js se puede lograr con:
+
+[gulp-imagemin](https://www.npmjs.com/package/gulp-minify)
+
+![image](/img/31.png)
+
+### Investigar la creación de un proyecto Yeoman para Jekyl
+
+Entre las opciones más populares en internet tenemos a:
+
+1. [jekyllstarter](http://anandmanisankar.com/jekyllstarter/)
+
+![image](/img/32.png)
+
+> NOTA: que incluso nos permite posterior mente crear post de forma simple
+
+![image](/img/33.png)
+
+2. [generator-jekyllized](https://github.com/sondr3/generator-jekyllized)
+
+![image](/img/34.png)
 
 ## Bibliografía
 

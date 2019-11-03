@@ -2,6 +2,7 @@ let gulp = require('gulp');
 let concatCss = require('gulp-concat-css');
 let cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
 
 
 gulp.task('concatCss', function() {
@@ -25,4 +26,13 @@ gulp.task('sourcesMaps', function(done) {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'));
     done();
+});
+
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch('*.html', browserSync.reload);
 });
